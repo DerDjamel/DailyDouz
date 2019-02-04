@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Acme')
+
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif')
+
+@import url('https://fonts.googleapis.com/css?family=Merienda')
+
+$font-size: 20px
+$main-header-font: 'Acme', sans-serif
+$main-paragraph-font: 'Bree Serif', serif
+
+$urgent: #ee5253
+$important: #fed330
+
+/* breakpoint from bootstrap 4 */
+
+
+/* mixin */
+
+
+/* GENERAL STUFF */
+html
+  font-size: $font-size
+
+  @media(max-width: 766px)
+    font-size: $font-size * .7
+
+  @media(max-width: 480px)
+    font-size: $font-size * .5
+
+body
+  height: 100vh
+  font-size: 1rem
+  width: 100vw
+  display: flex
+  flex-direction: column
+  background-color: #f5f6fa
+
+
+h1
+  font-family: $main-header-font
+p, h2
+  font-family: $main-paragraph-font
+
+
+form
+  margin: .2em .5em .2em
+
+
+
+textarea.task-content
+  width: 100%
+  padding: .7em
+  margin: .8em 0 .8em
+  border: 1px solid transparent
+  border-radius: 5px
+  outline: none
+  height: 5em
+
+
+=basic-button()
+  padding: .3em 1.5em
+  border: 1px solid #000
+  border-radius: 20px
+  background-color: transparent
+  font-size: .9em
+  margin-top: 1em
+  margin-right: 1em
+  font-family: $main-paragraph-font
+
+=start-button()
+  color: #54a0ff
+  border-color: #54a0ff
+  font-weight: bold
+  transition: all .1s ease-in-out
+  &:hover
+    background-color: #54a0ff
+    color: #fff
+
+button
+  +basic-button()
+
+
+button.add-task
+  margin: 0
+  margin-bottom: .5em
+  +start-button()
+
+
+
+/* HEADER SECTION */
+header
+  display: flex
+  font-size: 1em
+  justify-content: center
+  line-height: 3em
+  height: 3em
+  min-height: 3em
+  background-color: #0abde3
+  color: #fff
+  width: 100%
+
+  h1.logo
+    margin-right: .30em
+    border-right: 2px solid #fff
+    padding-right: .3em
+  p.slogan
+    font-weight: bold
+
+
+
+/* TODO BOARD SECTION */
+section.todo-board
+  width: 100vw
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  justify-content: center
+  font-size: .7em
+
+  section
+    flex-basis: 33%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-content: center
+
+    h2
+      padding: .3em
+      text-align: left
+      font-size: 1.3em
+
+    article
+      &:first-of-type
+        margin-top: .4em
+
+      &.urgent, &.important
+        button
+          background-color: #fff
+
+      &.urgent
+        background-color: $urgent
+
+      &.important
+        background-color: $important
+
+      max-width: 500px
+      min-width: 300px
+      background-color: white
+      padding: 1em .8em
+      border: 1px solid transparent
+      border-radius: 6px
+      margin-right: .5em
+      margin-left: .5em
+      margin-bottom: .8em
+
+      .features
+        button.start
+          +start-button()
+
+        button.drop
+          color: $urgent
+          border-color: $urgent
+          font-weight: bold
+          transition: all .1s ease-in-out
+          &:hover
+            background-color: $urgent
+            color: #fff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* todo-board section */
+/* todo-board section */
+/* todo-board section */
+/* todo-board section */
+/* todo-board section */
